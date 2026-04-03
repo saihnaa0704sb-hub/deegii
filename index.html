@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="UTF-8">
+<title>Тодордог зураг</title>
+
+<style>
+body {
+    background: #eee;
+    text-align: center;
+    font-family: Arial;
+}
+
+h2 {
+    margin: 20px;
+}
+
+.gallery {
+    width: 1300px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    filter: blur(4px);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.gallery img:hover {
+    filter: blur(0);
+}
+
+
+.gallery img.active {
+    filter: blur(0);
+    transform: scale(1.5);
+    z-index: 10;
+    position: relative;
+}
+</style>
+
+</head>
+<body>
+
+<h2>-Deegiigin 2 daxi-</h2>
+
+<div class="gallery">
+    <img src="1.jpg">
+    <img src="2.jpg">
+    <img src="3.jpg">
+    <img src="4.jpg">
+    <img src="5.jpg">
+    <img src="7.jpg">
+    <img src="6.jpg">
+    <img src="8.jpg">
+    <img src="9.jpg">
+</div>
+
+<script>
+const images = document.querySelectorAll(".gallery img");
+images.forEach(img => {
+    img.addEventListener("click", function() {
+        this.classList.toggle("active");
+    });
+});
+</script>
+
+</body>
+</html>
